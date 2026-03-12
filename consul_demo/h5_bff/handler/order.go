@@ -3,8 +3,7 @@ package handler
 import (
 	"net/http"
 	"strconv"
-
-	"consul_demo/h5_bff/client"
+	"zhongyao/aa/crawler/consul_demo/h5_bff/client"
 
 	"github.com/gin-gonic/gin"
 )

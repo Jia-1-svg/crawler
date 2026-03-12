@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+	"zhongyao/aa/crawler/consul_demo/order_srv/model"
 
-	"consul_demo/order_srv/model"
-	pb "consul_demo/proto/order"
+	pb "zhongyao/aa/crawler/consul_demo/proto/order"
 
 	"gorm.io/gorm"
 )

@@ -6,9 +6,9 @@ import (
 	"math/rand"
 	"sync"
 	"time"
+	"zhongyao/aa/crawler/consul_demo/pkg/consul"
 
-	"consul_demo/pkg/consul"
-	pb "consul_demo/proto/order"
+	pb "zhongyao/aa/crawler/consul_demo/proto/order"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

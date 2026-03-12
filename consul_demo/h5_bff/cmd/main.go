@@ -9,10 +9,9 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
-
-	"consul_demo/h5_bff/client"
-	"consul_demo/h5_bff/config"
-	"consul_demo/h5_bff/handler"
+	"zhongyao/aa/crawler/consul_demo/h5_bff/client"
+	"zhongyao/aa/crawler/consul_demo/h5_bff/config"
+	"zhongyao/aa/crawler/consul_demo/h5_bff/handler"
 
 	"github.com/gin-gonic/gin"
 )

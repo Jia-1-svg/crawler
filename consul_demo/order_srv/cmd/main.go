@@ -9,12 +9,12 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+	"zhongyao/aa/crawler/consul_demo/order_srv/config"
+	"zhongyao/aa/crawler/consul_demo/order_srv/model"
+	"zhongyao/aa/crawler/consul_demo/order_srv/service"
+	"zhongyao/aa/crawler/consul_demo/pkg/consul"
 
-	"consul_demo/order_srv/config"
-	"consul_demo/order_srv/model"
-	"consul_demo/order_srv/service"
-	"consul_demo/pkg/consul"
-	pb "consul_demo/proto/order"
+	pb "zhongyao/aa/crawler/consul_demo/proto/order"
 
 	"google.golang.org/grpc"
 	"gorm.io/driver/mysql"
