@@ -1,4 +1,4 @@
-module zhongyao/aa/crawler
+module github.com/Jia-1-svg/crawler/tags
 
 go 1.25.7
 
