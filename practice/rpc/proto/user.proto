@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "./";
+
+message UserRegisterReq {
+  string nickname = 1;
+  string password = 2;
+}
+
+message UserRegisterResp {
+  int64 userId = 1;
+}
+
+message OrderAddReq {
+  int64 userId = 1;
+  int64 payType = 2;
+  repeated OrderItem item =3;
+}
+message OrderItem{
+  int64 goodsId =1;
+  int64 quantity =2;
+}
+message OrderAddResp {
+  int64 orderId = 1;
+  string aliPay =2;
+  float total =3;
+}
+
+message GoodsAddReq {
+  string title = 1;
+  float price = 2;
+  int64 stock =3;
+}
+
+message GoodsAddResp {
+  int64 goodsId = 1;
+}
+
+message GoodsDelReq {
+  int64 goodsId = 1;
+}
+
+message GoodsDelResp {
+  bool success = 1;
+}
+
+message GoodsUpdateReq {
+  string title = 1;
+  float price = 2;
+  int64 stock =3;
+  int64 goodsId = 4;
+}
+
+message GoodsUpdateResp {
+  bool success = 1;
+}
+
+message GoodsDetailReq {
+  int64 goodsId = 4;
+}
+
+message GoodsDetailResp {
+  string title = 1;
+  float price = 2;
+  int64 stock =3;
+}
+
+message OrderNotifyPayReq {
+  string order_sn = 1;
+}
+
+message OrderNotifyPayResp {
+  bool success =1;
+}
+
+service UserService {
+  rpc UserRegister(UserRegisterReq) returns (UserRegisterResp);
+  rpc OrderAdd(OrderAddReq) returns (OrderAddResp);
+  rpc GoodsAdd(GoodsAddReq) returns (GoodsAddResp);
+  rpc GoodsDel(GoodsDelReq) returns (GoodsDelResp);
+  rpc GoodsUpdate(GoodsUpdateReq) returns (GoodsUpdateResp);
+  rpc GoodsDetail(GoodsDetailReq) returns (GoodsDetailResp);
+  rpc OrderNotifyPay(OrderNotifyPayReq) returns (OrderNotifyPayResp);
+}
