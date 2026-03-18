@@ -1,4 +1,4 @@
-module github.com/Jia-1-svg/crawler/tags
+module github.com/Jia-1-svg/crawler
 
 go 1.25.7
 
