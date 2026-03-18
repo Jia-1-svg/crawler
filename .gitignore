@@ -32,5 +32,3 @@ go.work.sum
 # .vscode/
 .idea
 *.log
-go.mod
-go.sum
