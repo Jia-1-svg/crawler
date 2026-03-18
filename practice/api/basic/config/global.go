@@ -1,6 +1,6 @@
 package config
 
-import __ "zhongyao/aa/crawler/practice/api/proto"
+import __ "github.com/Jia-1-svg/crawler/practice/api/proto"
 
 var (
 	UserClient __.UserServiceClient

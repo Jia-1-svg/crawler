@@ -2,14 +2,14 @@ package main
 
 import (
 	"context"
+	_ "github.com/Jia-1-svg/crawler/practice/api/basic/init"
+	"github.com/Jia-1-svg/crawler/practice/api/router"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
-	_ "zhongyao/aa/crawler/practice/api/basic/init"
-	"zhongyao/aa/crawler/practice/api/router"
 )
 
 func main() {

@@ -3,17 +3,17 @@ package main
 import (
 	"context"
 	"flag"
+	"github.com/Jia-1-svg/crawler/practice/rpc/RabbitMQ"
+	"github.com/Jia-1-svg/crawler/practice/rpc/basic/config"
+	"github.com/Jia-1-svg/crawler/practice/rpc/basic/init1"
+	"github.com/Jia-1-svg/crawler/practice/rpc/handler"
+	__ "github.com/Jia-1-svg/crawler/practice/rpc/proto"
 	"log"
 	"net"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
-	"zhongyao/aa/crawler/practice/rpc/RabbitMQ"
-	"zhongyao/aa/crawler/practice/rpc/basic/config"
-	"zhongyao/aa/crawler/practice/rpc/basic/init1"
-	"zhongyao/aa/crawler/practice/rpc/handler"
-	__ "zhongyao/aa/crawler/practice/rpc/proto"
 
 	"google.golang.org/grpc"
 )

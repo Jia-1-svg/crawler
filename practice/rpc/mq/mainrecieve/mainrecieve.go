@@ -2,26 +2,29 @@ package main
 
 import (
 	"context"
+	config1 "github.com/Jia-1-svg/crawler/practice/api/basic/config"
+	_ "github.com/Jia-1-svg/crawler/practice/api/basic/init"
+	__ "github.com/Jia-1-svg/crawler/practice/api/proto"
+	"github.com/Jia-1-svg/crawler/practice/rpc/basic/config"
+	_ "github.com/Jia-1-svg/crawler/practice/rpc/basic/init1"
+	rabbitMQ "github.com/Jia-1-svg/crawler/practice/rpc/mq/RabbitMQ"
 	"log"
 	"time"
-	config1 "zhongyao/aa/crawler/practice/api/basic/config"
-	__ "zhongyao/aa/crawler/practice/api/proto"
-	"zhongyao/aa/crawler/practice/rpc/basic/config"
-	"zhongyao/aa/crawler/practice/rpc/mq/RabbitMQ"
 )
 
 func main() {
-	kutengOne := RabbitMQ.NewRabbitMQTopic("exKutengTopic", "#")
+	kutengOne := rabbitMQ.NewRabbitMQTopic("exKutengTopic", "#")
 	kutengOne.SubsribeMsg("topic", func(msg string) {
-		val := config.Rdb.SetNX(config.Ctx, "orderSn", 1, time.Second*10).Val()
+		val := config.Rdb.SetNX(context.Background(), msg, 1, time.Minute*10).Val()
 		if !val {
-			log.Println("11")
+			log.Println("错误")
+			return
 		}
-
-		config1.UserClient.OrderNotifyPay(context.Background(), &__.OrderNotifyPayReq{
+		_, err := config1.UserClient.OrderNotifyPay(context.Background(), &__.OrderNotifyPayReq{
 			OrderSn: msg,
 		})
-
-		return
+		if err != nil {
+			log.Println("错误22")
+		}
 	})
 }

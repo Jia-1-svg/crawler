@@ -1,8 +1,8 @@
 package main
 
 import (
-	"zhongyao/aa/crawler/practice/rpc/RabbitMQ"
-	_ "zhongyao/aa/crawler/practice/rpc/basic/init1"
+	"github.com/Jia-1-svg/crawler/practice/rpc/RabbitMQ"
+	_ "github.com/Jia-1-svg/crawler/practice/rpc/basic/init1"
 )
 
 func main() {

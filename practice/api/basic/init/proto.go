@@ -2,9 +2,9 @@ package init
 
 import (
 	"flag"
+	"github.com/Jia-1-svg/crawler/practice/api/basic/config"
+	__ "github.com/Jia-1-svg/crawler/practice/api/proto"
 	"log"
-	"zhongyao/aa/crawler/practice/api/basic/config"
-	__ "zhongyao/aa/crawler/practice/api/proto"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

@@ -3,14 +3,14 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/Jia-1-svg/crawler/practice/rpc/handler"
+	__ "github.com/Jia-1-svg/crawler/practice/rpc/proto"
 	"log"
 	"net"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
-	"zhongyao/aa/crawler/practice/rpc/handler"
-	__ "zhongyao/aa/crawler/practice/rpc/proto"
 
 	"google.golang.org/grpc"
 

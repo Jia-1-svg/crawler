@@ -1,7 +1,7 @@
 package router
 
 import (
-	"zhongyao/aa/crawler/practice/api/handler/service"
+	"github.com/Jia-1-svg/crawler/practice/api/handler/service"
 
 	"github.com/gin-gonic/gin"
 )

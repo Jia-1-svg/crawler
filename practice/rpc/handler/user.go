@@ -3,12 +3,12 @@ package handler
 import (
 	"context"
 	"errors"
+	"github.com/Jia-1-svg/crawler/practice/rpc/RabbitMQ"
+	"github.com/Jia-1-svg/crawler/practice/rpc/basic/config"
+	"github.com/Jia-1-svg/crawler/practice/rpc/model"
+	"github.com/Jia-1-svg/crawler/practice/rpc/pkg"
+	__ "github.com/Jia-1-svg/crawler/practice/rpc/proto"
 	"strconv"
-	"zhongyao/aa/crawler/practice/rpc/RabbitMQ"
-	"zhongyao/aa/crawler/practice/rpc/basic/config"
-	"zhongyao/aa/crawler/practice/rpc/model"
-	"zhongyao/aa/crawler/practice/rpc/pkg"
-	__ "zhongyao/aa/crawler/practice/rpc/proto"
 )
 
 type Server struct {

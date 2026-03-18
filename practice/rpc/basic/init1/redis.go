@@ -2,7 +2,7 @@ package init1
 
 import (
 	"fmt"
-	"zhongyao/aa/crawler/practice/rpc/basic/config"
+	"github.com/Jia-1-svg/crawler/practice/rpc/basic/config"
 
 	"github.com/go-redis/redis/v8"
 )

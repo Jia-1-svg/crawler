@@ -2,8 +2,8 @@ package init1
 
 import (
 	"fmt"
-	"zhongyao/aa/crawler/practice/rpc/basic/config"
-	"zhongyao/aa/crawler/practice/rpc/model"
+	"github.com/Jia-1-svg/crawler/practice/rpc/basic/config"
+	"github.com/Jia-1-svg/crawler/practice/rpc/model"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

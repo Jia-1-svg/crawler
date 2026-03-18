@@ -4,9 +4,9 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
+	"github.com/Jia-1-svg/crawler/practice/rpc/basic/config"
 	"log"
 	"time"
-	"zhongyao/aa/crawler/practice/rpc/basic/config"
 )
 
 func SendMsg(topic string, msg string) {

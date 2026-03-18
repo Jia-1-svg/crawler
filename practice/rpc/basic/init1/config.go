@@ -1,8 +1,8 @@
 package init1
 
 import (
+	"github.com/Jia-1-svg/crawler/practice/rpc/basic/config"
 	"strings"
-	"zhongyao/aa/crawler/practice/rpc/basic/config"
 
 	"github.com/nacos-group/nacos-sdk-go/v2/clients"
 	"github.com/nacos-group/nacos-sdk-go/v2/common/constant"

@@ -3,9 +3,11 @@ package service
 import (
 	"fmt"
 	"net/http"
-	"zhongyao/aa/crawler/practice/api/basic/config"
-	"zhongyao/aa/crawler/practice/api/handler/request"
-	__ "zhongyao/aa/crawler/practice/api/proto"
+
+	"github.com/Jia-1-svg/crawler/practice/api/basic/config"
+	"github.com/Jia-1-svg/crawler/practice/api/handler/request"
+	__ "github.com/Jia-1-svg/crawler/practice/api/proto"
+	"github.com/Jia-1-svg/crawler/practice/rpc/mq/mainpublish"
 
 	"github.com/gin-gonic/gin"
 )
@@ -181,20 +183,23 @@ func NotifyPay(c *gin.Context) {
 		})
 		return
 	}
-	pay, err := config.UserClient.OrderNotifyPay(c, &__.OrderNotifyPayReq{
-		OrderSn: out_trade_no,
-	})
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"msg":  "异步失败",
-			"code": 500,
-		})
-		return
-	}
+	go func() {
+		mainpublish.MainpublishSendMsg("topic", out_trade_no)
+	}()
+	//pay, err := config.UserClient.OrderNotifyPay(c, &__.OrderNotifyPayReq{
+	//	OrderSn: out_trade_no,
+	//})
+	//if err != nil {
+	//	c.JSON(http.StatusBadRequest, gin.H{
+	//		"msg":  "异步失败",
+	//		"code": 500,
+	//	})
+	//	return
+	//}
 	c.JSON(200, gin.H{
 		"msg":  "异步成功",
 		"code": 200,
-		"data": pay,
+		//"data": pay,
 	})
 	return
 }
