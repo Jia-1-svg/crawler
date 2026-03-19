@@ -137,7 +137,7 @@ func (r *RabbitMQ) SubsribeMsg(topic string, handler func(msg string)) {
 		nil,
 	)
 
-	forever := make(chan bool)
+	//forever := make(chan bool)
 
 	go func() {
 		for d := range messges {
@@ -146,6 +146,6 @@ func (r *RabbitMQ) SubsribeMsg(topic string, handler func(msg string)) {
 		}
 	}()
 
-	fmt.Println("退出请按 CTRL+C\n")
-	<-forever
+	fmt.Println("退出请按 CTRL+C")
+	//<-forever
 }
